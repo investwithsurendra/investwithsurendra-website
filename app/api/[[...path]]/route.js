@@ -22,13 +22,14 @@ export async function OPTIONS() {
   return new NextResponse(null, { status: 204, headers: corsHeaders });
 }
 
-async function handler(request, { params }) {
-  const pathArr = params?.path || [];
+async function handler(request, ctx) {
+  const { params } = ctx;
+  const p = await params;
+  const pathArr = p?.path || [];
   const route = "/" + pathArr.join("/");
   const method = request.method;
 
   try {
-    // Health check
     if (route === "/" || route === "/health") {
       return NextResponse.json(
         { status: "ok", app: "Invest With Surendra", timestamp: new Date().toISOString() },
@@ -36,10 +37,9 @@ async function handler(request, { params }) {
       );
     }
 
-    // Lead / Enquiry submission
     if (route === "/leads" && method === "POST") {
       const body = await request.json();
-      const { name, mobile, project, budget, visitDate, source } = body || {};
+      const { name, mobile, project, budget, visitDate, source, message } = body || {};
       if (!name || !mobile) {
         return NextResponse.json(
           { error: "Name and mobile are required." },
@@ -54,7 +54,8 @@ async function handler(request, { params }) {
         project: project ? String(project).trim() : "",
         budget: budget ? String(budget).trim() : "",
         visitDate: visitDate ? String(visitDate).trim() : "",
-        source: source || "website_hero_form",
+        message: message ? String(message).trim() : "",
+        source: source || "website",
         createdAt: new Date().toISOString(),
       };
       await db.collection("leads").insertOne(lead);
