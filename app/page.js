@@ -40,7 +40,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { PROJECTS, GALLERY, CATEGORIES } from "@/lib/projects";
+import { PROJECTS as SEED_PROJECTS, GALLERY, CATEGORIES } from "@/lib/projects";
 import {
   PHONE,
   PHONE_TEL,
@@ -209,7 +209,7 @@ function HeroForm() {
             <div><Label className="text-white/80 text-xs">Project</Label>
               <select value={form.project} onChange={(e) => setForm({...form, project: e.target.value})} className="w-full mt-1 bg-white/5 border border-white/20 text-white rounded-md h-11 px-3 text-sm focus:border-gold focus:outline-none">
                 <option value="" className="bg-primary">Select</option>
-                {PROJECTS.map((p) => <option key={p.slug} value={p.name} className="bg-primary">{p.name}</option>)}
+                {SEED_PROJECTS.map((p) => <option key={p.slug} value={p.name} className="bg-primary">{p.name}</option>)}
               </select>
             </div>
             <div><Label className="text-white/80 text-xs">Budget</Label>
@@ -362,6 +362,12 @@ function Founder() {
 
 // ---------- Projects Section ----------
 function ProjectsSection() {
+  const [projects, setProjects] = useState(SEED_PROJECTS);
+  useEffect(() => {
+    fetch("/api/projects").then((r) => r.json()).then((r) => {
+      if (r.projects?.length) setProjects(r.projects);
+    }).catch(() => {});
+  }, []);
   return (
     <section id="projects" className="py-24 bg-secondary relative">
       <div className="container mx-auto">
@@ -374,7 +380,7 @@ function ProjectsSection() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {PROJECTS.map((p, i) => (
+          {projects.map((p, i) => (
             <motion.div key={p.slug} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }} className="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift group flex flex-col">
               <div className="relative h-56 overflow-hidden">
                 <img src={p.card} alt={p.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
@@ -691,7 +697,7 @@ function Footer() {
         <div>
           <h4 className="font-display text-lg font-bold mb-5 text-gold">Projects</h4>
           <ul className="space-y-3 text-sm">
-            {PROJECTS.map((p) => (
+            {SEED_PROJECTS.map((p) => (
               <li key={p.slug}>
                 <Link href={`/projects/${p.slug}`} className="text-white/80 hover:text-gold flex items-center gap-2">
                   <ChevronRight className="w-3.5 h-3.5 text-gold" /> {p.name}
