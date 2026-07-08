@@ -70,9 +70,21 @@ export function SiteFooter() {
           </div>
           <p className="text-white/70 text-sm leading-relaxed mb-5">Jaipur's most trusted name for JDA approved premium plot investments. RERA registered, legally verified, bank loan enabled.</p>
           <div className="flex gap-3">
-            {[{Icon:Facebook},{Icon:Instagram},{Icon:Youtube}].map(({Icon}, i) => (
-              <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-gold hover:text-primary flex items-center justify-center transition-all"><Icon className="w-4 h-4" /></a>
-            ))}
+            {[
+  { Icon: Facebook, url: "https://www.facebook.com/share/18orXYA3sc/" },
+  { Icon: Instagram, url: "https://www.instagram.com/invest_with_surendra?igsh=MWlmcmgzZTBhdHpsaQ==" },
+  { Icon: Youtube, url: "https://youtube.com/@investwithsurendra" }
+].map(({ Icon, url }, i) => (
+  <a
+    key={i}
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-10 h-10 rounded-full bg-white/10 hover:bg-gold hover:text-primary flex items-center justify-center transition-all"
+  >
+    <Icon />
+  </a>
+))}
           </div>
         </div>
         <div>
