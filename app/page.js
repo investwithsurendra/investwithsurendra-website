@@ -325,7 +325,7 @@ function Founder() {
           </h2>
           <div className="flex items-center gap-3 mb-6">
             <div className="h-[2px] w-12 bg-gold" />
-            <div className="text-primary/70 font-medium">Founder, Invest With Surendra</div>
+            <div className="text-primary/70 font-medium">Founder, Invest With Surendra , RERA NO. RAJ/A/2021/2347</div>
           </div>
           <p className="text-primary/75 text-lg leading-relaxed mb-8">
             I help families and investors buy genuine <strong className="text-gold">JDA approved plots</strong> with
