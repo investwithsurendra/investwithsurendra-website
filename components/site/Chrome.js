@@ -21,7 +21,7 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-11 h-11 rounded-full bg-gold-gradient flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
             <img 
-            src="https://i.postimg.cc/Rh4FnjgW/file-0000000000bc7208b701ffacd96333ab.jpg"
+            src="https://i.postimg.cc/Rh4FnjgW/file-0000000000bc7208b701ffacd96333ab.jpg?v=2"
   alt="Invest With Surendra"
   className="w-10 h-10 rounded-full object-cover"/>
           </div>
