@@ -17,7 +17,7 @@ export function SiteHeader() {
   }, []);
   return (
     <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? "bg-primary/95 backdrop-blur-xl shadow-lg py-3" : "bg-primary/70 backdrop-blur py-4"}`}>
-      <div className="container mx-auto flex items-center justify-between">
+     
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-11 h-11 rounded-full bg-gold-gradient flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
             <img 
