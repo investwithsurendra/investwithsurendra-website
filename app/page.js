@@ -676,7 +676,11 @@ function Footer() {
         <div>
           <div className="flex items-center gap-3 mb-5">
             <div className="w-11 h-11 rounded-full bg-gold-gradient flex items-center justify-center">
-              <Building2 className="w-5 h-5 text-primary" />
+              <img
+  src="https://i.postimg.cc/Rh4FnjgW/file-0000000000bc7208b701ffacd96333ab.jpg?v=2"
+  alt="Invest With Surendra"
+  className="w-10 h-10 rounded-full object-cover"
+/>
             </div>
             <div className="font-display text-lg font-bold">Invest With <span className="text-gold-gradient">Surendra</span></div>
           </div>
