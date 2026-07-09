@@ -17,13 +17,13 @@ export function SiteHeader() {
   }, []);
   return (
     <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? "bg-primary/95 backdrop-blur-xl shadow-lg py-3" : "bg-primary/70 backdrop-blur py-4"}`}>
-     
+      <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-11 h-11 rounded-full bg-gold-gradient flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
             <img 
             src="https://i.postimg.cc/Rh4FnjgW/file-0000000000bc7208b701ffacd96333ab.jpg"
   alt="Invest With Surendra"
-  className="w-10 h-10 rounded-full object-cover" />
+  className="w-10 h-10 rounded-full object-cover"/>
           </div>
           <div className="leading-tight">
             <div className="font-display text-white text-lg md:text-xl font-bold">Invest With <span className="text-gold-gradient">Surendra</span></div>
