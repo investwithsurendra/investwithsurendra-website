@@ -61,7 +61,7 @@ const FOUNDER_IMG =
 "https://i.postimg.cc/qRfgptnD/file-0000000007e87208a9adf3aaae5600b1.jpg";
 
 const STATS = [
-  { value: "500+", label: "Happy Customers" },
+  { value: "100+", label: "Happy Customers" },
   { value: "100+", label: "Properties Sold" },
   { value: "5+", label: "Years Experience" },
   { value: "100%", label: "Transparent Deals" },
@@ -120,7 +120,7 @@ function Header({ open, setOpen }) {
               Invest With <span className="text-gold-gradient">Surendra</span>
             </div>
             <div className="text-[10px] md:text-xs text-gold/90 tracking-[0.2em] uppercase">
-              Premium Real Estate • Jaipur
+              Your Trust , Our Commitment
             </div>
           </div>
         </Link>
@@ -725,7 +725,7 @@ function Footer() {
       </div>
       <div className="container mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/60">
         <div>© {new Date().getFullYear()} Invest With Surendra. All rights reserved.</div>
-        <div>Founder: <span className="text-gold">Surendra Kumar Meena</span> • Premium Real Estate, Jaipur</div>
+        <div>Founder: <span className="text-gold">Surendra Kumar Meena</span> • Your Trust , Our Commitment</div>
       </div>
     </footer>
   );
