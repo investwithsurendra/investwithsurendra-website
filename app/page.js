@@ -58,7 +58,7 @@ const HERO_POSTER =
   "https://images.unsplash.com/photo-1505843795480-5cfb3c03f6ff?crop=entropy&cs=srgb&fm=jpg&w=1920&q=85";
 
 const FOUNDER_IMG =
-  "https://images.pexels.com/photos/15073808/pexels-photo-15073808.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+"https://i.postimg.cc/qRfgptnD/file-0000000007e87208a9adf3aaae5600b1.jpg";
 
 const STATS = [
   { value: "500+", label: "Happy Customers" },
