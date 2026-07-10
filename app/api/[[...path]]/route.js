@@ -85,12 +85,10 @@ async function ensureSeedTestimonials(db) {
   }
 }
 
-async function handler(request, ctx) {
-  const p = await ctx.params;
-  const pathArr = p?.path || [];
-  const route = "/" + pathArr.join("/");
-  const method = request.method;
-
+const p = ctx?.params || {};
+const pathArr = Array.isArray(p.path) ? p.path : [];
+const route = "/" + pathArr.join("/");
+const method = request.method;
   try {
     const db = await getDb();
 
