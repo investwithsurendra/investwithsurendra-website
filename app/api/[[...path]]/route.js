@@ -85,9 +85,8 @@ async function ensureSeedTestimonials(db) {
   }
 }
 
-const p = ctx?.params || {};
-const pathArr = Array.isArray(p.path) ? p.path : [];
-const route = "/" + pathArr.join("/");
+const { pathname } = new URL(request.url);
+const route = pathname.replace("/api", "") || "/";
 const method = request.method;
   try {
     const db = await getDb();
