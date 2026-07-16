@@ -336,7 +336,7 @@ function Founder() {
           <div className="grid grid-cols-3 gap-4 mb-8">
             {[
               { v: "5+", l: "Years Experience" },
-              { v: "500+", l: "Happy Customers" },
+              { v: "100+", l: "Happy Customers" },
               { v: "100+", l: "Properties Sold" },
             ].map((s) => (
               <div key={s.l} className="bg-secondary rounded-xl p-4 text-center border border-gold/10">
